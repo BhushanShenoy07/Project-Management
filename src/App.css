@@ -1,38 +1,99 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* General page setup */
+.app-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  margin-top: 50px;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Profile card container */
+.profile-card {
+  width: 300px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin: 20px;
+  cursor: pointer;
+}
+
+/* Profile image styling */
+.profile-image {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+  transition: transform 0.3s ease;
+}
+
+/* Hover effect on image */
+.profile-card:hover .profile-image {
+  transform: scale(1.05);
+}
+
+/* Name styling */
+.profile-name {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* Bio styling */
+.profile-bio {
+  font-size: 16px;
+  color: #666;
+  margin: 0 10px 20px 10px;
+}
+
+/* Button to change background */
+.change-bg-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  border: none;
+  background-color: #6200ea;
   color: white;
+  border-radius: 25px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.App-link {
-  color: #61dafb;
+/* Hover effect for button */
+.change-bg-button:hover {
+  background-color: #3700b3;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+body {
+  margin: 0;
+  padding: 0;
+  background: #181c24;
+}
+
+.notification-container {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  z-index: 2000;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.notification {
+  border-radius: 6px;
+  padding: 12px 20px;
+  min-width: 220px;
+  font-size: 14px;
+  box-shadow: 0 2px 8px #0001;
+  border: 1px solid #E5E7EB;
+  background: #F3F4F6;
+  color: #374151;
+  transition: background 0.2s, color 0.2s;
+}
+.notification.success {
+  background: #D1FAE5;
+  color: #065F46;
+}
+.notification.warning {
+  background: #FEF3C7;
+  color: #92400E;
 }
